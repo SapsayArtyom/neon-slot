@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #05060f;
+}
+
+body {
+  /* Касания управляют игрой, а не прокруткой и зумом страницы. */
+  touch-action: none;
+  overscroll-behavior: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#game-root {
+  position: fixed;
+  inset: 0;
+}
+
+/*
+ * Размер canvas задаёт Pixi (autoDensity пишет его в inline-стили).
+ * Своих width/height здесь быть не должно — иначе два источника размера
+ * конфликтуют и при ресайзе появляется растянутый кадр.
+ */
+#game-root canvas {
+  display: block;
+}
